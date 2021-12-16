@@ -1,0 +1,95 @@
+{% extends "layout/base.html" %}
+
+{% block title %} Photography Workshop {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block body_class %} landing-page {% endblock body_class %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <form id="register-form">
+            <div class="mb-3">
+                <label for="Name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+            <div class="mb-3">
+              <label for="Email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email">
+            </div>
+            <div class="mb-3">
+                <label for="Phone" class="form-label">Phone number</label>
+                <input type="phone" class="form-control" id="phone">
+            </div>
+            <div class="mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="age" class="form-control" id="age">
+            </div>
+            <label for="Education" class="form-label">Your highest Education</label>
+            <select class="form-select" id="education" aria-label="Default select example">
+                <option value="twelveth">10+2</option>
+                <option value="ug">Under-Graduate</option>
+                <option value="pg">Post-Graduate</option>
+            </select>
+            <label for="state" class="form-label">State(We are only organising for few states)</label>
+            <select class="form-select" id="state" aria-label="Default select example">
+                <option value="delhi">Delhi</option>
+                <option value="haryana">Haryana</option>
+                <option value="kerela">Kerela</option>
+                <option value="kolkata">Kolkata</option>
+                <option value="maharashtra">Maharashtra</option>
+                <option value="punjab">Punjab</option>
+                <option value="rajasthan">Rajasthan</option>
+                <option value="uttar-pradesh">Uttar Pradesh</option>
+            </select>
+            
+            <button type="submit" class="btn btn-primary" id="btn-register">Submit</button>
+          </form>
+    </div>
+  </div>
+<script>$(document).on('click', '#btn-register', function(e){
+    e.preventDefault();
+    var form = $('#register-form');
+
+    let name = $('#name').val();
+    let email = $('#email').val();
+    let phone = $('#phone').val();
+    let age = $('#age').val();
+    let education = $('#education').val();
+    let state = $('#state').val();
+    jsondata={
+      "name":name,
+      "email":email,
+      "phone":phone,
+      "age":age,
+      "education":education,
+      "state":state
+    }
+    
+
+    // disabled the submit button
+    $("#btn-register").prop("disabled", true);
+    $.ajax({
+      type: "POST",
+      data: jsondata,
+      dataType: "json",
+        url:"/add-user",
+        error: function (request, error) {
+            console.log(arguments);
+        },
+        success: function(data){
+          console.log(data);
+          data=data;
+          var msg=String(data.message);
+          alert("Message "+msg);
+        },
+        complete: function(){
+          $("#btn-register").prop("disabled", false);    // enabled the submit button
+        }
+      })
+  });
+</script>
+
+{% endblock content %}
