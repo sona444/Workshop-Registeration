@@ -41,10 +41,19 @@ def addUser():
          age = request.form.get('age')
          education = request.form.get('education')
          state = request.form.get('state')
-         new_user = user(name=name, email=email, phone=phone, age=age, education=education, state=state)
-         db.session.add(new_user)
-         db.session.commit()
-         return("updated")
+         users=user.query.all()
+         check=0
+         for userr in users:
+             if email==userr.email:
+                 check=1
+                 break
+         if check==1:
+            return("Email ID already Exists")
+         else:
+            new_user = user(name=name, email=email, phone=phone, age=age, education=education, state=state)
+            db.session.add(new_user)
+            db.session.commit()
+            return("updated")
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -77,11 +77,11 @@
     $.ajax({
       type: "POST",
       data: jsondata,
-      dataType: "json",
+      dataType: "string",
         url:"/add-user",
-        error: function (request, error) {
+        error: function (request, data) {
             console.log(arguments);
-            alert("successully Registered!");
+            alert("cannot do because", data);
         },
         success: function(data){
           console.log(data);
