@@ -10,7 +10,160 @@
 {% block content %}
 
 <main>
-<hr>
-<a href="\register"><button>Register</button></a>
+    <div id="main-carousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="50">
+                <img src="{{url_for('static', filename='img/1.jpg')}}" class="d-block w-100 carousel1" alt="slide1">
+                <div class="carousel-caption d-none d-md-block first-caption">
+                <h5>Photography Workshop <i class="fas fa-camera"></i></h5>
+                <p>Are you a photography lover?</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-interval="50">
+                <img src="{{url_for('static', filename='img/2.jpg')}}" class="d-block w-100 carousel2" alt="slide2">
+                <div class="carousel-caption d-none d-md-block second-caption">
+                <h5>Photography Workshop <i class="fas fa-camera"></i></h5>
+                <p>Are you a photography lover?</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-interval="50">
+                <img src="{{url_for('static', filename='img/3.jpg')}}" class="d-block w-100 carousel3" alt="slide3">
+                <div class="carousel-caption d-none d-md-block third-caption">
+                    <h5>Photography Workshop <i class="fas fa-camera"></i></h5>
+                    <p>Are you a photography lover?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="1000">
+                <img src="{{url_for('static', filename='img/mobile-1.jpg')}}" class="d-block w-100 mobile-carousel1" alt="slide1">
+                <div class="carousel-caption d-md-block mobile-caption">
+                <h5>Photography Workshop <i class="fas fa-camera"></i></h5>
+                <p>Are you a photography lover?</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-interval="1000">
+                <img src="{{url_for('static', filename='img/mobile-2.jpg')}}" class="d-block w-100 mobile-carousel2" alt="slide2">
+                <div class="carousel-caption d-md-block mobile-caption">
+                <h5>Photography Workshop <i class="fas fa-camera"></i></h5>
+                <p>Are you a photography lover?</p>
+                </div>
+            </div>
+            <div class="carousel-item"  data-interval="1000">
+                <img src="{{url_for('static', filename='img/mobile-3.jpg')}}" class="d-block w-100 mobile-carousel3" alt="slide3">
+                <div class="carousel-caption d-md-block mobile-caption">
+                    <h5>Photography Workshop <i class="fas fa-camera"></i></h5>
+                    <p>Are you a photography lover?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="third-section">
+        <div class="container">
+            <div class="row">
+            <h2 class="about-heading">What is it all about?<h2>
+                <div class="col-md-6 pic1-div">
+                    <img src="{{url_for('static', filename='img/pic.gif')}}" class="pic1" width=500px>
+                </div>
+                <div class="col-md-5 content1" >
+                    Photography is the art, application, and practice of creating durable images by recording light, either electronically by means of an image sensor, or chemically by means of a light-sensitive material such as photographic film. 
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="fourth-section" style="background-color:#775655; color:white;">
+        <div class="container">
+            <div class="row">
+            <h2 class="about-heading">Who all can join?<h2>
+                <div class="col-md-6 content2">
+                <ul>
+                    <li><b>Anyone</b> who have keen interest in the field of photography.</li> 
+                    <li><b>Anyone</b> who have some masterpiece to showcase.</li>
+                    <li><b>Anyone</b> who likes gathering information related to photography</li> 
+                </ul>
+                </div>
+                <div class="col-md-6 image2-div">
+                    <img src="{{url_for('static', filename='img/pic2.gif')}}" class="pic1" width=500px>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="fifth-section">
+        <div class="container">
+            <div class="row">
+            <h2 class="about-heading">When & Where? <i class="fas fa-calendar-alt"></i><h2>
+                <div class="col-md-6 pic1-div">
+                    <img src="{{url_for('static', filename='img/pic3.gif')}}" class="pic1">
+                </div>
+                <div class="col-md-6 content3">
+                <ul>
+                    <li>On 20th Dec 2021 <i class="fas fa-clock"></i></li> <br>
+                    <li>6:00 P.M. to 8:00 P.M. <i class="fas fa-hourglass-half"></i></li><br>
+                    <li>Via Zoom Call <i class="fas fa-globe-americas"></i></li> 
+                </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="speaker-section" style="background-color:#F7EDBA;" >
+        <div class="container" >
+            <div class="row">
+            <h2 class="speakers-head">Our Speakers <i class="fas fa-microphone-alt"></i></h2>
+                <div class="col-md-4 speakers">
+                    <div class="card">
+                    <img class="card-img-top" src="{{url_for('static', filename='img/avatar.png')}}" height=290 alt="Card image cap">
+                    <div class="card-body">
+                    <h3 style="text-align:center;">Mr. Ramesh Kumar</h3>
+                        <p class="card-text"><ul>
+                        <li>A well known wildlife photographer.</li>
+                        <li>20 years of sparkling experience in photography.</li>
+                        </ul></p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-4 speakers">
+                    <div class="card">
+                    <img class="card-img-top" src="{{url_for('static', filename='img/avatar2.jpg')}}" height=290 alt="Card image cap">
+                    <div class="card-body">
+                    <h3 style="text-align:center;">Ms. Rita Singh</h3>
+                        <p class="card-text"><ul>
+                        <li>A professional bollywood photographer.</li>
+                        <li>12 years of sparkling experience in photography.</li>
+                        </ul></p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-4 speakers"  style="margin-bottom:40px;">
+                    <div class="card">
+                    <img class="card-img-top" src="{{url_for('static', filename='img/avatar3.jpg')}}" height=290 alt="Card image cap">
+                    <div class="card-body">
+                    <h3 style="text-align:center;">Mr. Hemant Raj</h3>
+                        <p class="card-text"><ul>
+                        <li>Professional nature photographer</li>
+                        <li>9 years of sparkling experience in photography.</li>
+                        </ul></p>
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="register" style=" height:400px;">
+        <div class="container" >
+            <div class="row" style="text-align:center;">
+            <h4 style="font-weight:700; font-size:30px;">Hurry up limited seats Left. Register now!<h4><br>
+            <a href="\register"><button>Register</button></a>
+            </div>
+        </div>
+    </section>
+
 </main>
 {% endblock content %}

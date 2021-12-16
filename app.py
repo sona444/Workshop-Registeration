@@ -24,6 +24,11 @@ def index():
 def register():
     return render_template("register.html")
 
+@app.route('/attendees')
+def attendees():
+    users=user.query.all()
+    return render_template("attendees.html",users=users)
+
 @app.route('/add-user', methods = ['GET', 'POST'])
 def addUser():
    if request.method == "POST":
