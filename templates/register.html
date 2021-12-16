@@ -8,33 +8,35 @@
 {% block body_class %} landing-page {% endblock body_class %}
 
 {% block content %}
+<section class="form" >
 <div class="container">
     <div class="row">
-        <form id="register-form">
+    <h1 style="margin-top:170px; text-align:center;font-weight:800;">Register Yourself <i class="fas fa-user"></i></h1>
+        <form id="register-form" style="margin-bottom:45px;">
             <div class="mb-3">
                 <label for="Name" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="name">
+                <input type="text" class="form-control" id="name" required>
             </div>
             <div class="mb-3">
               <label for="Email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="email">
+              <input type="email" class="form-control" id="email" required>
             </div>
             <div class="mb-3">
                 <label for="Phone" class="form-label">Phone number</label>
-                <input type="phone" class="form-control" id="phone">
+                <input type="phone" class="form-control" id="phone" required>
             </div>
             <div class="mb-3">
                 <label for="age" class="form-label">Age</label>
-                <input type="age" class="form-control" id="age">
+                <input type="age" class="form-control" id="age" required>
             </div>
             <label for="Education" class="form-label">Your highest Education</label>
-            <select class="form-select" id="education" aria-label="Default select example">
+            <select class="form-select" id="education" required>
                 <option value="Twelveth Pass">10+2</option>
                 <option value="Under Graduate">Under-Graduate</option>
                 <option value="Post Graduate">Post-Graduate</option>
-            </select>
+            </select><br>
             <label for="state" class="form-label">State(We are only organising for few states)</label>
-            <select class="form-select" id="state" aria-label="Default select example">
+            <select class="form-select" id="state" required>
                 <option value="Delhi">Delhi</option>
                 <option value="Haryana">Haryana</option>
                 <option value="Kerela">Kerela</option>
@@ -45,10 +47,11 @@
                 <option value="Uttar Pradesh">Uttar Pradesh</option>
             </select>
             
-            <button type="submit" class="btn btn-primary" id="btn-register">Submit</button>
-          </form>
+            <span style="width:100%;"><button type="submit" class="btn btn-primary" id="btn-register">Submit</button></span>
+          </form><hr>
     </div>
   </div>
+  </section>
 <script>$(document).on('click', '#btn-register', function(e){
     e.preventDefault();
     var form = $('#register-form');
@@ -78,6 +81,7 @@
         url:"/add-user",
         error: function (request, error) {
             console.log(arguments);
+            alert("successully Registered!");
         },
         success: function(data){
           console.log(data);

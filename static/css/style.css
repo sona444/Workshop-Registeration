@@ -2,8 +2,19 @@
 .navbar-collapse{
     justify-content: flex-end;
 }
-.attendees-table{
-    text-transform: capitalize;
+
+#btn-register{
+    margin-top:15px;
+    background-color:#F0E1A8;
+    color:black;
+    border:1px solid black;
+    padding:20px;
+    font-weight:700;
+    padding-top:15px;
+    border-radius:15px;
+}
+.form{
+    background-color:#F0E1A8;
 }
 .speakers-head{
     text-align: center;
@@ -34,8 +45,12 @@ footer{
     background-color:#F0E1A8;
 }
 @media (min-width:789px){
-    #mobile-carousel{
+    .mobile-carousel{
         display:none;
+    }
+    .attendees-table{
+        text-transform: capitalize;
+        font-size:25px;
     }
 .carousel1{
     height:745px;
@@ -44,7 +59,7 @@ footer{
 .carousel2{
     height:745px;
 }
-#main-carousel{
+.main-carousel{
     height:745px;
 }
 .carousel-inner{
@@ -135,13 +150,29 @@ color:white !important; font-size:20px;
     .speakers-head{
         font-size:40px;
     }
+    #btn-register{
+        margin-top:15px;
+        background-color:#F0E1A8;
+        color:black;
+        border:1px solid black;
+        padding:15px;
+        font-weight:700;
+        padding-top:10px;
+        border-radius:15px;
+        width:100%;
+    }
+    .attendees-table{
+        text-transform: capitalize;
+        font-size:15px;
+        text-align:center;
+    }
     .about-heading{
         font-size:40px;
     }
-    #main-carousel{
+    .main-carousel{
         display:none;
     }
-    #mobile-carousel{
+    .mobile-carousel{
         display:block;
         background-color: black;
     }
@@ -203,5 +234,8 @@ color:white !important; font-size:20px;
     }
     .nav-link{
         color:black !important;
+    }
+    .attendees h1{
+        font-weight:600 !important;
     }
 }
