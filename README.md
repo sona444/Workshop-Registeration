@@ -36,7 +36,7 @@
    
   >   You must see the server running at  http://127.0.0.1:5000/ 
 
-  ## Avatars used in the website
+## Avatars used in the website
 
   - Add avatars' links to the "avatars" database.
 
