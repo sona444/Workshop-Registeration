@@ -13,6 +13,12 @@
     <div class="row">
     <h1 style="margin-top:170px; text-align:center;font-weight:800;">Register Yourself <i class="fas fa-user"></i></h1>
         <form id="register-form" style="margin-bottom:45px;">
+            <label for="state" class="form-label hello">Choose your profile picture (Click on the image to get more Avatars)</label>
+            <select id="id_select2_example" style="width: 200px;">
+             {% for ava in avatars %}
+              <option data-img_src="{{ava.link}}">{{ava.id}}</option>
+            {% endfor %}
+            </select>
             <div class="mb-3">
                 <label for="Name" class="form-label">Full Name</label>
                 <input type="text" class="form-control" id="name" required>
@@ -52,7 +58,24 @@
     </div>
   </div>
   </section>
-<script>$(document).on('click', '#btn-register', function(e){
+<script>
+function custom_template(obj){
+        	var data = $(obj.element).data();
+        	var text = $(obj.element).text();
+        	if(data && data['img_src']){
+	        	img_src = data['img_src'];
+	        	template = $("<div style='text-align:center;' class='div-img-dropdown'><img src=\"" + img_src + "\" style=\"border-radius:50%;width:50%;height:62px;\"/></div>");
+	        	return template;
+	        }
+        }
+	var options = {
+		'templateSelection': custom_template,
+		'templateResult': custom_template,
+	}
+	$('#id_select2_example').select2(options);
+  $('.select2-container--default .select2-selection--single').css({'height': '220px'});
+
+$(document).on('click', '#btn-register', function(e){
     e.preventDefault();
     var form = $('#register-form');
 
@@ -62,13 +85,15 @@
     let age = $('#age').val();
     let education = $('#education').val();
     let state = $('#state').val();
+    let avatar= $('#id_select2_example').val();
     jsondata={
       "name":name,
       "email":email,
       "phone":phone,
       "age":age,
       "education":education,
-      "state":state
+      "state":state,
+      "avatar":avatar
     }
     
 
