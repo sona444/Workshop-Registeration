@@ -1,24 +1,37 @@
 # Workshop-Registeration
-- A flask app for a photography workshop registeration. 
-- Made in Python flask framework.
+- A Simple web app for a photography workshop registeration. 
+- Made with Flask a Python framework.
 
-## Setup (Using VS Code Terminal)
-- Clone this repository
-- Setup a virtual environment by using the command "<b>python3 -m venv 'Environment-name'</b>".
-- Step into that environment by using "<b>source venv(Environment name in my case)/bin/activate</b>".
-- Install all the required packages by using "<b>pip3 install requirements.txt".
-- <b>Setup the Database(PostgreSQL)</b> by following these commands:
-- sudo apt update
-- sudo apt install postgresql postgresql-contrib
-- After installation run "psql".
-- Then login as your desired user.
-- Create your database by using "CREATE database workshop(In my case);"
-- Then run migrations by using following commands:
-- flask db init
-- flask db migrate
-- flask db upgrade
-- Now you are all set to run the application
+# Pre-Requisites
+ - [PostgreSQL](https://www.postgresql.org/download/) (After installing create database and make changes in env and config accordingly. )
 
-## How to run
-- It's simple. Just run the command "flask run".
-- Now you can access the application at localhost "http://127.0.0.1:5000/".
+## Setup 
+- Clone this repository 
+  
+  git clone https://github.com/sona444/Workshop-Registeration.git
+  
+- Setup the virtual environment 
+     
+    python3 -m venv venv 
+    
+- Step into that environment 
+   
+   source venv/bin/activate
+   
+- Install all the required packages 
+    
+   pip3 install requirements.txt
+   
+- Initialize database 
+  
+  flask db init
+  
+- Migrate and upgrade 
+    
+   flask db migrate && flask db upgrade
+   
+- Finally run the server 
+   
+   flask run
+   
+  >   You must see the server running at  http://127.0.0.1:5000/ 

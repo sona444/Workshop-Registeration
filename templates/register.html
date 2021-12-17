@@ -77,23 +77,15 @@
     $.ajax({
       type: "POST",
       data: jsondata,
-      dataType: "string",
-        url:"/add-user",
-        error: function (request, data) {
-            console.log(arguments);
-            alert("cannot do because", data);
-        },
-        success: function(data){
-          console.log(data);
-          data=data;
-          var msg=String(data.message);
-          alert("Message "+msg);
-        },
-        complete: function(){
-          $("#btn-register").prop("disabled", false);    // enabled the submit button
+      url:"/add-user",
+      dataType : "json",
+        complete: function(resp){
+          $("#btn-register").prop("disabled", false); 
+          alert(resp.responseText);
+          // enabled the submit button
         }
-      })
-  });
+      });
+});
 </script>
 
 {% endblock content %}
