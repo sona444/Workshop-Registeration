@@ -11,7 +11,7 @@
   
   git clone https://github.com/sona444/Workshop-Registeration.git
   
-- Setup the virtual environmen 
+- Setup the virtual environment
      
     python3 -m venv venv 
     
