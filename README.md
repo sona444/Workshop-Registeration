@@ -1,5 +1,5 @@
 # Workshop-Registeration
-- A Simple web app for a photography workshop registeration. 
+- A Simple web app for a photography workshop registeration
 - Made with Flask a Python framework.
 - Working video can be seen at https://drive.google.com/file/d/1q-_VJ9o9WQA7szkJ9K2hhqnQzBg-WzZ2/view?usp=sharing
 
